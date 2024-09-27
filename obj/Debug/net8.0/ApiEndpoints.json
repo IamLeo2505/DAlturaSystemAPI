@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ProductoController",
+    "Method": "Lista",
+    "RelativePath": "api/Producto/Listado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ProductoController",
+    "Method": "Obtener",
+    "RelativePath": "api/Producto/Obtener/{idproducto}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idproducto",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

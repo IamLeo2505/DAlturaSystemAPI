@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|c:\\users\\usuario\\source\\repos\\d\u0027alturasystemapi\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|solutionrelative:controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|c:\\users\\usuario\\source\\repos\\d\u0027alturasystemapi\\modelos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|solutionrelative:modelos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|c:\\users\\usuario\\source\\repos\\d\u0027alturasystemapi\\controllers\\detallecompracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|solutionrelative:controllers\\detallecompracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|c:\\users\\usuario\\source\\repos\\d\u0027alturasystemapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|c:\\users\\usuario\\source\\repos\\d\u0027alturasystemapi\\controllers\\marcacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|solutionrelative:controllers\\marcacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 360,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DetalleCompraController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Controllers\\DetalleCompraController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DetalleCompraController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Controllers\\DetalleCompraController.cs",
+              "RelativeToolTip": "Controllers\\DetalleCompraController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T16:11:25.208Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "Controllers\\ProductoController.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAIYAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T16:09:17.924Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Modelos\\Producto.cs",
+              "RelativeDocumentMoniker": "Modelos\\Producto.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Modelos\\Producto.cs",
+              "RelativeToolTip": "Modelos\\Producto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T06:27:10.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-27T05:41:24.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MarcaController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Controllers\\MarcaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MarcaController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Controllers\\MarcaController.cs",
+              "RelativeToolTip": "Controllers\\MarcaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T16:10:13.266Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
