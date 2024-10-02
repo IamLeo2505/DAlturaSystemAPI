@@ -19,7 +19,7 @@
     "ContainingType": "D_AlturaSystemAPI.Controllers.ProductoController",
     "Method": "EliminarDatos",
     "RelativePath": "api/Producto/Eliminar/{idproducto}",
-    "HttpMethod": "PUT",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -67,6 +67,80 @@
     "Parameters": [
       {
         "Name": "idproducto",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ProveedorController",
+    "Method": "EditarDatos",
+    "RelativePath": "api/Proveedor/EditarDatos",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Proveedor",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ProveedorController",
+    "Method": "EliminarDatos",
+    "RelativePath": "api/Proveedor/EliminarDatos/{idproveedor}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idproveedor",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ProveedorController",
+    "Method": "Guardar",
+    "RelativePath": "api/Proveedor/Guardar Cambios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Proveedor",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ProveedorController",
+    "Method": "Lista",
+    "RelativePath": "api/Proveedor/Listado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ProveedorController",
+    "Method": "Obtener",
+    "RelativePath": "api/Proveedor/Obtener/{idproveedor}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idproveedor",
         "Type": "System.Int32",
         "IsRequired": true
       }
