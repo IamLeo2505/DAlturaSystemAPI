@@ -124,7 +124,7 @@ namespace D_AlturaSystemAPI.Controllers
 
         public IActionResult Guardar([FromBody] Producto objeto)
         {
-            
+
             try
             {
 
@@ -133,37 +133,91 @@ namespace D_AlturaSystemAPI.Controllers
                     connection.Open();
                     var cmd = new SqlCommand("pA_guardar_productos", connection);
                     cmd.Parameters.AddWithValue("codigo", objeto.codigo);
+                    cmd.Parameters.AddWithValue("nombre", objeto.nombre);
+                    cmd.Parameters.AddWithValue("descripcion", objeto.descripcion);
+                    cmd.Parameters.AddWithValue("precio_compra", objeto.precio_compra);
+                    cmd.Parameters.AddWithValue("precio_venta", objeto.precio_venta);
+                    cmd.Parameters.AddWithValue("f_ingreso", objeto.f_ingreso);
+                    cmd.Parameters.AddWithValue("f_vencimiento", objeto.f_vencimiento);
+                    cmd.Parameters.AddWithValue("stock", objeto.stock);
+                    cmd.Parameters.AddWithValue("estado", objeto.estado);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    using (var rd = cmd.ExecuteReader())
-                    {
-                        while (rd.Read())
-                        {
-                            listado.Add(new Producto()
-                            {
-                                idproducto = Convert.ToInt32(rd["idproducto"]),
-                                codigo = Convert.ToInt32(rd["codigo"]),
-                                nombre = rd["nombre"].ToString(),
-                                descripcion = rd["descripcion"].ToString(),
-                                f_ingreso = Convert.ToDateTime(rd["f_ingreso"]),
-                                f_vencimiento = Convert.ToDateTime(rd["f_vencimiento"]),
-                                stock = Convert.ToInt32(rd["stock"]),
-                                precio_compra = Convert.ToDecimal(rd["precio_compra"]),
-                                precio_venta = Convert.ToDecimal(rd["precio_venta"]),
-                                estado = rd["estado"].ToString()
-
-                            });
-                        }
-                    }
+                    cmd.ExecuteNonQuery();
 
                 }
-                producto = listado.Where(item => item.idproducto == idproducto).FirstOrDefault();
-                return StatusCode(StatusCodes.Status200OK, new { message = "ok", response = listado });
+
+                return StatusCode(StatusCodes.Status200OK, new { message = "ok" });
 
             }
             catch (Exception error)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message, response = listado });
+                return StatusCode(StatusCodes.Status500InternalServerError, new {message = error.Message});
+            }
+        }
+
+        [HttpPut]
+        [Route("Editar")]
+
+        public IActionResult EditarDatos([FromBody] Producto objeto)
+        {
+
+            try
+            {
+
+                using (var connection = new SqlConnection(ConnectSQL))
+                {
+                    connection.Open();
+                    var cmd = new SqlCommand("pA_editar_producto", connection);
+                    cmd.Parameters.AddWithValue("idproducto", objeto.idproducto == 0 ? DBNull.Value : objeto.idproducto);
+                    cmd.Parameters.AddWithValue("codigo", objeto.codigo == 0 ? DBNull.Value : objeto.codigo);
+                    cmd.Parameters.AddWithValue("nombre", objeto.nombre is null ? DBNull.Value : objeto.nombre);
+                    cmd.Parameters.AddWithValue("descripcion", objeto.descripcion is null ? DBNull.Value : objeto.descripcion);
+                    cmd.Parameters.AddWithValue("precio_compra", objeto.precio_compra == 0 ? DBNull.Value : objeto.precio_compra);
+                    cmd.Parameters.AddWithValue("precio_venta", objeto.precio_venta == 0 ? DBNull.Value : objeto.precio_venta);
+                    cmd.Parameters.AddWithValue("stock", objeto.stock == 0 ? DBNull.Value : objeto.stock);
+                    cmd.Parameters.AddWithValue("estado", objeto.estado is null ? DBNull.Value : objeto.estado);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.ExecuteNonQuery();
+
+                }
+
+                return StatusCode(StatusCodes.Status200OK, new { message = "Editado" });
+
+            }
+            catch (Exception error)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message });
+            }
+        }
+
+        [HttpDelete]
+        [Route("Eliminar/{idproducto:int}")]
+
+        public IActionResult EliminarDatos(int idproducto)
+        {
+
+            try
+            {
+
+                using (var connection = new SqlConnection(ConnectSQL))
+                {
+                    connection.Open();
+                    var cmd = new SqlCommand("pA_eliminar_productos", connection);
+                    cmd.Parameters.AddWithValue("idproducto", idproducto);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.ExecuteNonQuery();
+
+                }
+
+                return StatusCode(StatusCodes.Status200OK, new { message = "Eliminado" });
+
+            }
+            catch (Exception error)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message });
             }
         }
     }

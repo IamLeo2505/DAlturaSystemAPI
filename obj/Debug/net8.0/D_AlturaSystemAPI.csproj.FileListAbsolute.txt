@@ -36,3 +36,4 @@ C:\Users\Usuario\source\repos\D'AlturaSystemAPI\obj\Debug\net8.0\refint\D_Altura
 C:\Users\Usuario\source\repos\D'AlturaSystemAPI\obj\Debug\net8.0\D_AlturaSystemAPI.pdb
 C:\Users\Usuario\source\repos\D'AlturaSystemAPI\obj\Debug\net8.0\D_AlturaSystemAPI.genruntimeconfig.cache
 C:\Users\Usuario\source\repos\D'AlturaSystemAPI\obj\Debug\net8.0\ref\D_AlturaSystemAPI.dll
+C:\Users\Usuario\source\repos\D'AlturaSystemAPI\obj\Debug\net8.0\D_AlturaSystemAPI.sourcelink.json

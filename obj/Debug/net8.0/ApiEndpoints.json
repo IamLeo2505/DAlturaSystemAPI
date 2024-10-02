@@ -1,6 +1,54 @@
 [
   {
     "ContainingType": "D_AlturaSystemAPI.Controllers.ProductoController",
+    "Method": "EditarDatos",
+    "RelativePath": "api/Producto/Editar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Producto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ProductoController",
+    "Method": "EliminarDatos",
+    "RelativePath": "api/Producto/Eliminar/{idproducto}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idproducto",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ProductoController",
+    "Method": "Guardar",
+    "RelativePath": "api/Producto/Guardar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Producto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ProductoController",
     "Method": "Lista",
     "RelativePath": "api/Producto/Listado",
     "HttpMethod": "GET",
