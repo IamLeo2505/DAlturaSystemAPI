@@ -18,6 +18,8 @@ namespace D_AlturaSystemAPI.Controllers
         public ProductoController(IConfiguration configuration)
         {
             ConnectSQL = configuration.GetConnectionString("ConnectSQL");
+            ConnectSQL = configuration.GetConnectionString("ConnectSQLTwo");
+            ConnectSQL = configuration.GetConnectionString("ConnectSQLThree");
         }
 
 
