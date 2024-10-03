@@ -13,13 +13,13 @@ namespace D_AlturaSystemAPI.Controllers
     [ApiController]
     public class ProductoController : Controller
     {
-        private readonly string ConnectSQL;
+        private readonly string ConnectSQL, ConnectSQLTwo, ConnectSQLThree;
 
         public ProductoController(IConfiguration configuration)
         {
             ConnectSQL = configuration.GetConnectionString("ConnectSQL");
-            ConnectSQL = configuration.GetConnectionString("ConnectSQLTwo");
-            ConnectSQL = configuration.GetConnectionString("ConnectSQLThree");
+            ConnectSQLTwo = configuration.GetConnectionString("ConnectSQLTwo");
+            ConnectSQLThree = configuration.GetConnectionString("ConnectSQLThree");
         }
 
 
@@ -112,12 +112,12 @@ namespace D_AlturaSystemAPI.Controllers
 
                 }
                 producto = listado.Where(item => item.idproducto == idproducto).FirstOrDefault();
-                return StatusCode(StatusCodes.Status200OK, new { message = "ok", response = listado });
+                return StatusCode(StatusCodes.Status200OK, new { message = "ok", response = producto });
 
             }
             catch (Exception error)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message, response = listado });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message, response = producto });
             } 
         }
 

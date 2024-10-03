@@ -1,5 +1,153 @@
 [
   {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ClienteController",
+    "Method": "EditarDatos",
+    "RelativePath": "api/Cliente/EditarDatos",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Cliente",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ClienteController",
+    "Method": "EliminarDatos",
+    "RelativePath": "api/Cliente/EliminarDatos/{idcliente}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idcliente",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ClienteController",
+    "Method": "Guardar",
+    "RelativePath": "api/Cliente/Guardar Cambios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Cliente",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ClienteController",
+    "Method": "Listado",
+    "RelativePath": "api/Cliente/Listado de Clientes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.ClienteController",
+    "Method": "Obtener",
+    "RelativePath": "api/Cliente/Obtener/{idcliente}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idcliente",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.CreditoController",
+    "Method": "EditarCr\u00E9dito",
+    "RelativePath": "api/Credito/EditarCr\u00E9dito",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Cr\u00E9dito",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.CreditoController",
+    "Method": "EliminarCr\u00E9dito",
+    "RelativePath": "api/Credito/EliminarCr\u00E9dito/{idcr\u00E9dito}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idcr\u00E9dito",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.CreditoController",
+    "Method": "GuardarCr\u00E9dito",
+    "RelativePath": "api/Credito/Guardar Cambios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Cr\u00E9dito",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.CreditoController",
+    "Method": "ListadoCr\u00E9ditos",
+    "RelativePath": "api/Credito/Listado de Cr\u00E9ditos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.CreditoController",
+    "Method": "Obtener",
+    "RelativePath": "api/Credito/Obtener/{idcr\u00E9dito}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idcr\u00E9dito",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "D_AlturaSystemAPI.Controllers.ProductoController",
     "Method": "EditarDatos",
     "RelativePath": "api/Producto/Editar",
@@ -123,7 +271,7 @@
   },
   {
     "ContainingType": "D_AlturaSystemAPI.Controllers.ProveedorController",
-    "Method": "Lista",
+    "Method": "Listado",
     "RelativePath": "api/Proveedor/Listado",
     "HttpMethod": "GET",
     "IsController": true,

@@ -14,19 +14,19 @@ namespace D_AlturaSystemAPI.Controllers
     public class ProveedorController : Controller
     {
 
-        private readonly string ConnectSQL;
+        private readonly string ConnectSQL, ConnectSQLTwo, ConnectSQLThree;
 
         public ProveedorController(IConfiguration configuration)
         {
             ConnectSQL = configuration.GetConnectionString("ConnectSQL");
-            ConnectSQL = configuration.GetConnectionString("ConnectSQLTwo");
-            ConnectSQL = configuration.GetConnectionString("ConnectSQLThree");
+            ConnectSQLTwo = configuration.GetConnectionString("ConnectSQLTwo");
+            ConnectSQLThree = configuration.GetConnectionString("ConnectSQLThree");
         }
 
 
         [HttpGet]
         [Route("Listado")]
-        public IActionResult Lista()
+        public IActionResult Listado()
         {
             List<Proveedor> listado = new List<Proveedor>();
 
@@ -104,12 +104,12 @@ namespace D_AlturaSystemAPI.Controllers
 
                 }
                 proveedor = listado.Where(item => item.idproveedor == idproveedor).FirstOrDefault();
-                return StatusCode(StatusCodes.Status200OK, new { message = "Correcto.", response = listado });
+                return StatusCode(StatusCodes.Status200OK, new { message = "Correcto.", response = proveedor });
 
             }
             catch (Exception error)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message, response = listado });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message, response = proveedor });
             }
         }
 
@@ -159,8 +159,8 @@ namespace D_AlturaSystemAPI.Controllers
                 using (var connection = new SqlConnection(ConnectSQL))
                 {
                     connection.Open();
-                    var cmd = new SqlCommand("pA_editar_producto", connection);
-                    cmd.Parameters.AddWithValue("idproducto", objeto.idproveedor == 0 ? DBNull.Value : objeto.idproveedor);
+                    var cmd = new SqlCommand("pA_editar_proveedor", connection);
+                    cmd.Parameters.AddWithValue("idproveedor", objeto.idproveedor == 0 ? DBNull.Value : objeto.idproveedor);
                     cmd.Parameters.AddWithValue("razonsocial", objeto.razonsocial is null ? DBNull.Value : objeto.razonsocial);
                     cmd.Parameters.AddWithValue("dni", objeto.dni is null ? DBNull.Value : objeto.dni);
                     cmd.Parameters.AddWithValue("ruc", objeto.ruc is null ? DBNull.Value : objeto.ruc);
@@ -195,7 +195,7 @@ namespace D_AlturaSystemAPI.Controllers
                 {
                     connection.Open();
                     var cmd = new SqlCommand("pA_eliminar_proveedor", connection);
-                    cmd.Parameters.AddWithValue("idproducto", idproveedor);
+                    cmd.Parameters.AddWithValue("idproveedor", idproveedor);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.ExecuteNonQuery();

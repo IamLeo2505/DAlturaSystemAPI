@@ -1,5 +1,4 @@
 C:\Users\Usuario\source\repos\D'AlturaSystemAPI\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\Usuario\source\repos\D'AlturaSystemAPI\bin\Debug\net8.0\appsettings.json
 C:\Users\Usuario\source\repos\D'AlturaSystemAPI\bin\Debug\net8.0\D_AlturaSystemAPI.exe
 C:\Users\Usuario\source\repos\D'AlturaSystemAPI\bin\Debug\net8.0\D_AlturaSystemAPI.deps.json
 C:\Users\Usuario\source\repos\D'AlturaSystemAPI\bin\Debug\net8.0\D_AlturaSystemAPI.runtimeconfig.json
@@ -37,3 +36,4 @@ C:\Users\Usuario\source\repos\D'AlturaSystemAPI\obj\Debug\net8.0\D_AlturaSystemA
 C:\Users\Usuario\source\repos\D'AlturaSystemAPI\obj\Debug\net8.0\D_AlturaSystemAPI.genruntimeconfig.cache
 C:\Users\Usuario\source\repos\D'AlturaSystemAPI\obj\Debug\net8.0\ref\D_AlturaSystemAPI.dll
 C:\Users\Usuario\source\repos\D'AlturaSystemAPI\obj\Debug\net8.0\D_AlturaSystemAPI.sourcelink.json
+C:\Users\Usuario\source\repos\D'AlturaSystemAPI\bin\Debug\net8.0\appsettings.json
