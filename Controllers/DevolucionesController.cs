@@ -43,16 +43,10 @@ namespace D_AlturaSystemAPI.Controllers
                     {
                         while (rd.Read())
                         {
-                            listado.Add(new Empleado()
+                            listado.Add(new Devolución()
                             {
-                                idempleado = Convert.ToInt32(rd["idempleado"]),
-                                nombre = rd["nombre"].ToString(),
-                                apellidos = rd["apellidos"].ToString(),
-                                dni = rd["dni"].ToString(),
-                                telefono = rd["telefono"].ToString(),
-                                direccion = rd["direccion"].ToString(),
-                                estado = rd["estado"].ToString()
-
+                                IdDevolución = Convert.ToInt32(rd["IdDevolución"]),
+                                Motivo = rd["Motivo"].ToString(),                              
                             });
                         }
                     }
