@@ -9,12 +9,11 @@ end
 
 
 create proc pA_guardar_devolucion(
-@IdDevolución int,
 @FechaDevolución date,
 @Motivo varchar(20)
 ) as 
 begin
-     insert into Devolución(IdDevolucion, FechaDevolucion, Motivo)
+     insert into Devolución(FechaDevolucion, Motivo)
 	 values (@IdDevolucion, @FechaDevolucion, @Motivoo)
 end
 
