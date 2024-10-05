@@ -222,6 +222,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.EmpleadoController",
+    "Method": "EditarDatos",
+    "RelativePath": "api/Empleado/EditarDatos",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Empleado",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.EmpleadoController",
+    "Method": "EliminarDatos",
+    "RelativePath": "api/Empleado/EliminarDatos/{idempleado}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idempleado",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.EmpleadoController",
+    "Method": "Guardar",
+    "RelativePath": "api/Empleado/Guardar Cambios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Empleado",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.EmpleadoController",
+    "Method": "Listado",
+    "RelativePath": "api/Empleado/Lista de Empleados",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.EmpleadoController",
+    "Method": "Obtener",
+    "RelativePath": "api/Empleado/Obtener/{idempleado}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idempleado",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "D_AlturaSystemAPI.Controllers.MarcaController",
     "Method": "EditarDatos",
     "RelativePath": "api/Marca/EditarDatos",
