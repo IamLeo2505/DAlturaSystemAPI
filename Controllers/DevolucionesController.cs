@@ -28,7 +28,7 @@ namespace D_AlturaSystemAPI.Controllers
         [Route("Lista de Devoluciones")]
         public IActionResult Listado()
         {
-            List<Devolución> listado = new List<Devolución>();
+            List<devolución> listado = new List<devolución>();
 
             try
             {
@@ -43,11 +43,11 @@ namespace D_AlturaSystemAPI.Controllers
                     {
                         while (rd.Read())
                         {
-                            listado.Add(new Devolución()
+                            listado.Add(new devolución()
                             {
                                 IdDevolución = Convert.ToInt32(rd["IdDevolución"]),
                                 FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"])
-                                Motivo = rd["Motivo"].ToString(),                              
+                                Motivo = rd["Motivo"].ToString()                              
                             });
                         }
                     }
@@ -67,8 +67,8 @@ namespace D_AlturaSystemAPI.Controllers
 
         public IActionResult Obtener(int IdDevolución)
         {          
-            List<Devolución> listado = new List<Devolución>();
-            Devolución Devolución = new Devolución();
+            List<devolución> listado = new List<devolución>();
+            devolución Devolución = new devolución();
 
             try
             {
@@ -76,23 +76,18 @@ namespace D_AlturaSystemAPI.Controllers
                 using (var connection = new SqlConnection(ConnectSQL))
                 {
                     connection.Open();
-                    var cmd = new SqlCommand("pA_lista_empleados", connection);
+                    var cmd = new SqlCommand("pA_lista_devolucion", connection);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     using (var rd = cmd.ExecuteReader())
                     {
                         while (rd.Read())
                         {
-                            listado.Add(new Empleado()
+                            listado.Add(new devolución()
                             {
-                                idempleado = Convert.ToInt32(rd["idempleado"]),
-                                nombre = rd["nombre"].ToString(),
-                                apellidos = rd["apellidos"].ToString(),
-                                dni = rd["dni"].ToString(),
-                                telefono = rd["telefono"].ToString(),
-                                direccion = rd["direccion"].ToString(),
-                                estado = rd["estado"].ToString()
-
+                                IdDevolución = Convert.ToInt32(rd["IdDevolución"]),
+                                FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"])
+                                Motivo = rd["Motivo"].ToString()
                             });
                         }
                     }
@@ -121,12 +116,9 @@ namespace D_AlturaSystemAPI.Controllers
                 {
                     connection.Open();
                     var cmd = new SqlCommand("pA_guardar_empleado", connection);
-                    cmd.Parameters.AddWithValue("nombre", objeto.nombre);
-                    cmd.Parameters.AddWithValue("apellidos", objeto.apellidos);
-                    cmd.Parameters.AddWithValue("dni", objeto.dni);
-                    cmd.Parameters.AddWithValue("telefono", objeto.telefono);
-                    cmd.Parameters.AddWithValue("direccion", objeto.direccion);
-                    cmd.Parameters.AddWithValue("estado", objeto.estado);
+                    IdDevolución = Convert.ToInt32(rd["IdDevolución"]),
+                    FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"])
+                    Motivo = rd["Motivo"].ToString(),
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.ExecuteNonQuery();
@@ -155,13 +147,9 @@ namespace D_AlturaSystemAPI.Controllers
                 {
                     connection.Open();
                     var cmd = new SqlCommand("pA_editar_empleado", connection);
-                    cmd.Parameters.AddWithValue("idempleado", objeto.idempleado == 0 ? DBNull.Value : objeto.idempleado);
-                    cmd.Parameters.AddWithValue("nombre", objeto.nombre is null ? DBNull.Value : objeto.nombre);
-                    cmd.Parameters.AddWithValue("apellidos", objeto.apellidos is null ? DBNull.Value : objeto.apellidos);
-                    cmd.Parameters.AddWithValue("dni", objeto.dni is null ? DBNull.Value : objeto.dni);
-                    cmd.Parameters.AddWithValue("telefono", objeto.telefono is null ? DBNull.Value : objeto.telefono);
-                    cmd.Parameters.AddWithValue("direccion", objeto.direccion is null ? DBNull.Value : objeto.direccion);
-                    cmd.Parameters.AddWithValue("estado", objeto.estado is null ? DBNull.Value : objeto.estado);
+                    IdDevolución = Convert.ToInt32(rd["IdDevolución"]),
+                    FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"])
+                                Motivo = rd["Motivo"].ToString(),
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.ExecuteNonQuery();
