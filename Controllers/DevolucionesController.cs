@@ -93,20 +93,20 @@ namespace D_AlturaSystemAPI.Controllers
                     }
 
                 }
-                empleado = listado.Where(item => item.idempleado == idempleado).FirstOrDefault();
-                return StatusCode(StatusCodes.Status200OK, new { message = "Correcto.", response = empleado });
+                Devolución = listado.Where(item => item.IdDevolución == IdDevolución).FirstOrDefault();
+                return StatusCode(StatusCodes.Status200OK, new { message = "Correcto.", response = Devolución });
 
             }
             catch (Exception error)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message, response = empleado });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message, response = Devolución });
             }
         }
 
         [HttpPost]
         [Route("Guardar Cambios")]
 
-        public IActionResult Guardar([FromBody] Empleado objeto)
+        public IActionResult Guardar([FromBody] devolución objeto)
         {
 
             try
@@ -115,10 +115,10 @@ namespace D_AlturaSystemAPI.Controllers
                 using (var connection = new SqlConnection(ConnectSQL))
                 {
                     connection.Open();
-                    var cmd = new SqlCommand("pA_guardar_empleado", connection);
-                    IdDevolución = Convert.ToInt32(rd["IdDevolución"]),
-                    FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"])
-                    Motivo = rd["Motivo"].ToString(),
+                    var cmd = new SqlCommand("pA_guardar_devolucion", connection);
+                    cmd.Parameters.AddWithValue("IdDevolución", objeto.IdDevolución);
+                    cmd.Parameters.AddWithValue("FechaDevolución", objeto.FechaDevolución);
+                    cmd.Parameters.AddWithValue("Motivo", objeto.Motivo);                    
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.ExecuteNonQuery();
@@ -137,7 +137,7 @@ namespace D_AlturaSystemAPI.Controllers
         [HttpPut]
         [Route("EditarDatos")]
 
-        public IActionResult EditarDatos([FromBody] Empleado objeto)
+        public IActionResult EditarDatos([FromBody] devolución objeto)
         {
 
             try
@@ -146,10 +146,10 @@ namespace D_AlturaSystemAPI.Controllers
                 using (var connection = new SqlConnection(ConnectSQL))
                 {
                     connection.Open();
-                    var cmd = new SqlCommand("pA_editar_empleado", connection);
-                    IdDevolución = Convert.ToInt32(rd["IdDevolución"]),
-                    FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"])
-                                Motivo = rd["Motivo"].ToString(),
+                    var cmd = new SqlCommand("pA_editar_devolucion", connection);                  
+                    cmd.Parameters.AddWithValue("IdDevolución", objeto.IdDevolución == 0 ? DBNull.Value : objeto.IdDevolución);
+                    cmd.Parameters.AddWithValue("FechaDevolución", objeto.FechaDevolución is null ? DBNull.Value : objeto.FechaDevolución);
+                    cmd.Parameters.AddWithValue("Motivo", objeto.Motivo is null ? DBNull.Value : objeto.Motivo);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.ExecuteNonQuery();
@@ -166,9 +166,9 @@ namespace D_AlturaSystemAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("EliminarDatos/{idempleado:int}")]
+        [Route("EliminarDatos/{IdDevolución:int}")]
 
-        public IActionResult EliminarDatos(int idempleado)
+        public IActionResult EliminarDatos(int IdDevolución)
         {
 
             try
@@ -177,8 +177,8 @@ namespace D_AlturaSystemAPI.Controllers
                 using (var connection = new SqlConnection(ConnectSQL))
                 {
                     connection.Open();
-                    var cmd = new SqlCommand("pA_eliminar_empleado", connection);
-                    cmd.Parameters.AddWithValue("idempleado", idempleado);
+                    var cmd = new SqlCommand("pA_eliminar_devolucion", connection);
+                    cmd.Parameters.AddWithValue("IdDevolución", IdDevolución);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.ExecuteNonQuery();
