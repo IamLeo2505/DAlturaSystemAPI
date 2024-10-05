@@ -1,5 +1,79 @@
 [
   {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.Categor\u00EDaController",
+    "Method": "EditarDatos",
+    "RelativePath": "api/Categor\u00EDa/EditarDatos",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Categor\u00EDa",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.Categor\u00EDaController",
+    "Method": "EliminarDatos",
+    "RelativePath": "api/Categor\u00EDa/EliminarDatos/{idcategoria}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idcategoria",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.Categor\u00EDaController",
+    "Method": "Guardar",
+    "RelativePath": "api/Categor\u00EDa/Guardar Cambios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Categor\u00EDa",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.Categor\u00EDaController",
+    "Method": "Listado",
+    "RelativePath": "api/Categor\u00EDa/Listado de Categor\u00EDas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.Categor\u00EDaController",
+    "Method": "Obtener",
+    "RelativePath": "api/Categor\u00EDa/Obtener/{idcategoria}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idcategoria",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "D_AlturaSystemAPI.Controllers.ClienteController",
     "Method": "EditarDatos",
     "RelativePath": "api/Cliente/EditarDatos",
@@ -141,6 +215,80 @@
     "Parameters": [
       {
         "Name": "idcr\u00E9dito",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.MarcaController",
+    "Method": "EditarDatos",
+    "RelativePath": "api/Marca/EditarDatos",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Marca",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.MarcaController",
+    "Method": "EliminarDatos",
+    "RelativePath": "api/Marca/EliminarDatos/{idmarca}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idmarca",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.MarcaController",
+    "Method": "Guardar",
+    "RelativePath": "api/Marca/Guardar Cambios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Marca",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.MarcaController",
+    "Method": "Listado",
+    "RelativePath": "api/Marca/Listado de Marcas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.MarcaController",
+    "Method": "Obtener",
+    "RelativePath": "api/Marca/Obtener/{idmarca}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idmarca",
         "Type": "System.Int32",
         "IsRequired": true
       }
