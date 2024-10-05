@@ -46,6 +46,7 @@ namespace D_AlturaSystemAPI.Controllers
                             listado.Add(new Devolución()
                             {
                                 IdDevolución = Convert.ToInt32(rd["IdDevolución"]),
+                                FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"])
                                 Motivo = rd["Motivo"].ToString(),                              
                             });
                         }
@@ -62,12 +63,12 @@ namespace D_AlturaSystemAPI.Controllers
 
 
         [HttpGet]
-        [Route("Obtener/{idempleado:int}")]
+        [Route("Obtener/{IdDevolución:int}")]
 
-        public IActionResult Obtener(int idempleado)
-        {
-            List<Empleado> listado = new List<Empleado>();
-            Empleado empleado = new Empleado();
+        public IActionResult Obtener(int IdDevolución)
+        {          
+            List<Devolución> listado = new List<Devolución>();
+            Devolución Devolución = new Devolución();
 
             try
             {
