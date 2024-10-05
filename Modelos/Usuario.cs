@@ -1,6 +1,8 @@
 ﻿namespace D_AlturaSystemAPI.Modelos
 {
-    public class Usuario
+    public class Cliente
     {
+      public int IDUsuario { get, set; }
+      public string Usuario { get; set; }
     }
 }
