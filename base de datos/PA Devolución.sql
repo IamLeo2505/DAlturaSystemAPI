@@ -3,56 +3,43 @@ as
 begin
      select 
 	 IdDevolucion, FechaDevolucion, Motivo
-	 from 
+	 from Devolución
 end
 
 
 
-create proc pA_guardar_empleado(
-@nombre varchar(50),
-@apellidos varchar(50),
-@dni varchar(16),
-@telefono varchar(8),
-@direccion varchar(150),
-@estado varchar(10)
+create proc pA_guardar_devolucion(
+@FechaDevolución date,
+@Motivo varchar(20)
 ) as 
 begin
-     insert into empleado(nombre, apellidos, dni, telefono, direccion, estado)
-	 values (@nombre, @apellidos, @dni, @telefono, @direccion, @estado)
+     insert into Devolución(FechaDevolucion, Motivo)
+	 values (@IdDevolucion, @FechaDevolucion, @Motivoo)
 end
 
 
 
-create proc pA_editar_empleado(
-@idempleado int,
-@nombre varchar(50) null,
-@apellidos varchar(50) null,
-@dni varchar(16) null, 
-@telefono varchar(8)  null, 
-@direccion varchar(150)  null, 
-@estado varchar(10)
+create proc pA_editar_devolucion(
+@IdDevolución int not null,
+@FechaDevolución date not null,
+@Motivo varchar(20) not null
 ) as 
 begin
 
-update empleado set
-
-nombre = isnull(@nombre, nombre),
-apellidos = isnull(@apellidos, apellidos),
-dni = isnull(@dni, dni),
-telefono = isnull(@telefono, telefono),
-direccion = isnull(@direccion, direccion),
-estado = isnull(@estado, estado)
-where idempleado = @idempleado
+update Devolución set
+FechaDevolucion = isnull(@FechaDevolucion, FechaDevolucion),
+Motivo = isnull(@Motivo, Motivo)
+where IdDevolucion = @IdDevolucion
 
 end
 
 
-create proc pA_eliminar_empleado(
-@idempleado int
+create proc pA_eliminar_devolucion(
+@IdDevolucion int
 )
 as 
 begin
-delete from empleado where idempleado = @idempleado
+delete from Devolución where IdDevolucion = @IdDevolucion
 end
 
-select * from empleado
+select * from Devolución
