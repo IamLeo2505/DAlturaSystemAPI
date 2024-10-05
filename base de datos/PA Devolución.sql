@@ -34,12 +34,12 @@ where IdDevolucion = @IdDevolucion
 end
 
 
-create proc pA_eliminar_empleado(
-@idempleado int
+create proc pA_eliminar_devolucion(
+@IdDevolucion int
 )
 as 
 begin
-delete from empleado where idempleado = @idempleado
+delete from Devolución where IdDevolucion = @IdDevolucion
 end
 
-select * from empleado
+select * from Devolución
