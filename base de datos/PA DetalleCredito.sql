@@ -12,13 +12,12 @@ USE SystemAlturaCoffee
 GO
 
 CREATE PROCEDURE pA_guardar_detallecredito(
-    @IdDetalleCrédito INT,
     @FechaPago Date,
     @MontoAbono DECIMAL(10,0),
 ) AS 
 BEGIN
-    INSERT INTO DetalleCrédito(IdDetalleCrédito, FechaPago, MontoAbono)
-    VALUES (@IdDetalleCrédito, @FechaPago, @MontoAbono)
+    INSERT INTO DetalleCrédito(FechaPago, MontoAbono)
+    VALUES (@FechaPago, @MontoAbono)
 END
 
 CREATE PROCEDURE pA_editar_detallecredito(
