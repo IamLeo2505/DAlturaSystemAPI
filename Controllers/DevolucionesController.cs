@@ -46,7 +46,7 @@ namespace D_AlturaSystemAPI.Controllers
                             listado.Add(new Devoluciones()
                             {
                                 IdDevolución = Convert.ToInt32(rd["IdDevolución"]),
-                                FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"])
+                                FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"]),
                                 Motivo = rd["Motivo"].ToString()                              
                             });
                         }
@@ -86,7 +86,7 @@ namespace D_AlturaSystemAPI.Controllers
                             listado.Add(new Devoluciones()
                             {
                                 IdDevolución = Convert.ToInt32(rd["IdDevolución"]),
-                                FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"])
+                                FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"]),
                                 Motivo = rd["Motivo"].ToString()
                             });
                         }
@@ -147,7 +147,7 @@ namespace D_AlturaSystemAPI.Controllers
                     connection.Open();
                     var cmd = new SqlCommand("pA_editar_devolucion", connection);                  
                     cmd.Parameters.AddWithValue("IdDevolución", objeto.IdDevolución == 0 ? DBNull.Value : objeto.IdDevolución);
-                    cmd.Parameters.AddWithValue("FechaDevolución", objeto.FechaDevolución is null ? DBNull.Value : objeto.FechaDevolución);
+                    cmd.Parameters.AddWithValue("FechaDevolución", objeto.FechaDevolución == DateTime.MinValue ? DBNull.Value : objeto.FechaDevolución);
                     cmd.Parameters.AddWithValue("Motivo", objeto.Motivo is null ? DBNull.Value : objeto.Motivo);
                     cmd.CommandType = CommandType.StoredProcedure;
 
