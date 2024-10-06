@@ -7,7 +7,6 @@ begin
 end
 
 create proc pA_guardar_usuario(
-@idusuario int,
 @usuario varchar (20),
 @pass varchar (20),
 @acceso varchar (20),
@@ -15,8 +14,8 @@ create proc pA_guardar_usuario(
 @idempleado int
 ) as 
 begin
-     insert into usuario(idusuario, usuario, pass, acceso, estado, idempleado)
-	 values (@idusuario, @usuario, @pass, @acceso, @estado, @idempleado)
+     insert into usuario(usuario, pass, acceso, estado, idempleado)
+	 values (@usuario, @pass, @acceso, @estado, @idempleado)
 end
 
 create proc pA_editar_usuario(
