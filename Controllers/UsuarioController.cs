@@ -46,10 +46,10 @@ namespace D_AlturaSystemAPI.Controllers
                             listado.Add(new Usuario()
                             {
                                 idusuario = Convert.ToInt32(rd["idusuario"]),
-                                usuario = rd["usuario"].ToString()
-                                pass = rd["pass"].ToString()
-                                acceso = rd["acceso"].ToString()
-                                estado = rd["estado"].ToString()
+                                usuario = rd["usuario"].ToString(),
+                                pass = rd["pass"].ToString(),
+                                acceso = rd["acceso"].ToString(),
+                                estado = rd["estado"].ToString(),
                                 idempleado = Convert.ToInt32(rd["idempleado"]),
                             });
                         }
@@ -89,10 +89,10 @@ namespace D_AlturaSystemAPI.Controllers
                             listado.Add(new Usuario()
                             {
                                 idusuario = Convert.ToInt32(rd["idusuario"]),
-                                usuario = rd["usuario"].ToString()
-                                pass = rd["pass"].ToString()
-                                acceso = rd["acceso"].ToString()
-                                estado = rd["estado"].ToString()
+                                usuario = rd["usuario"].ToString(),
+                                pass = rd["pass"].ToString(),
+                                acceso = rd["acceso"].ToString(),
+                                estado = rd["estado"].ToString(),
                                 idempleado = Convert.ToInt32(rd["idempleado"]),
                             });
                         }
