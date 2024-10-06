@@ -122,7 +122,6 @@ namespace D_AlturaSystemAPI.Controllers
                 {
                     connection.Open();
                     var cmd = new SqlCommand("pA_guardar_usuario", connection);
-                    cmd.Parameters.AddWithValue("idusuario", objeto.idusuario);
                     cmd.Parameters.AddWithValue("usuario", objeto.usuario);
                     cmd.Parameters.AddWithValue("pass", objeto.pass);
                     cmd.Parameters.AddWithValue("acceso", objeto.acceso);
