@@ -116,7 +116,6 @@ namespace D_AlturaSystemAPI.Controllers
                 {
                     connection.Open();
                     var cmd = new SqlCommand("pA_guardar_devolucion", connection);
-                    cmd.Parameters.AddWithValue("IdDevolución", objeto.IdDevolución);
                     cmd.Parameters.AddWithValue("FechaDevolución", objeto.FechaDevolución);
                     cmd.Parameters.AddWithValue("Motivo", objeto.Motivo);                    
                     cmd.CommandType = CommandType.StoredProcedure;
