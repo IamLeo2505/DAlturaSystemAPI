@@ -2,8 +2,8 @@
 {
     public class Devoluciones
     {
-        public int IdDevolucion { get; set; }
-        public DateTime FechaDevolucion { get; set; }
+        public int IdDevolución { get; set; }
+        public DateTime FechaDevolución { get; set; }
         public string Motivo { get; set; }
     }
 }
