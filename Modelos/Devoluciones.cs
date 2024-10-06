@@ -3,7 +3,7 @@
     public class Devoluciones
     {
         public int IdDevolucion { get; set; }
-        public date FechaDevolucion { get; set; }
+        public DateTime FechaDevolucion { get; set; }
         public string Motivo { get; set; }
     }
 }
