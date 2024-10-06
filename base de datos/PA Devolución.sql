@@ -2,7 +2,7 @@ create proc pA_lista_devolucion
 as
 begin
      select 
-	 IdDevolucion, FechaDevolucion, Motivo
+	 IdDevolución, FechaDevolución, Motivo
 	 from Devolución
 end
 
@@ -13,8 +13,8 @@ create proc pA_guardar_devolucion(
 @Motivo varchar(20)
 ) as 
 begin
-     insert into Devolución(FechaDevolucion, Motivo)
-	 values (@IdDevolucion, @FechaDevolucion, @Motivoo)
+     insert into Devolución(FechaDevolución, Motivo)
+	 values (@FechaDevolución, @Motivo)
 end
 
 
@@ -27,9 +27,9 @@ create proc pA_editar_devolucion(
 begin
 
 update Devolución set
-FechaDevolucion = isnull(@FechaDevolucion, FechaDevolucion),
+FechaDevolución = isnull(@FechaDevolución, FechaDevolución),
 Motivo = isnull(@Motivo, Motivo)
-where IdDevolucion = @IdDevolucion
+where IdDevolución = @IdDevolución
 
 end
 
@@ -39,7 +39,7 @@ create proc pA_eliminar_devolucion(
 )
 as 
 begin
-delete from Devolución where IdDevolucion = @IdDevolucion
+delete from Devolución where IdDevolución = @IdDevolucion
 end
 
-select * from Devolución
+select * from Devolución;
