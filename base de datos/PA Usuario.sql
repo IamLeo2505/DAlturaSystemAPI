@@ -1,45 +1,49 @@
-create proc pA_lista_devolucion
+create proc pA_lista_usuario
 as
 begin
      select 
-	 IdDevolucion, FechaDevolucion, Motivo
-	 from Devolución
+	 idusuario, usuario, pass, acceso, estado, idempleado
+	 from usuario
 end
 
-
-
-create proc pA_guardar_devolucion(
-@FechaDevolución date,
-@Motivo varchar(20)
+create proc pA_guardar_usuario(
+@idusuario int,
+@usuario varchar (20),
+@pass varchar (20),
+@acceso varchar (20),
+@estado varchar (10),
+@idempleado int
 ) as 
 begin
-     insert into Devolución(FechaDevolucion, Motivo)
-	 values (@IdDevolucion, @FechaDevolucion, @Motivoo)
+     insert into usuario(idusuario, usuario, pass, acceso, estado, idempleado)
+	 values (@idusuario, @usuario, @pass, @acceso, @estado, @idempleado)
 end
 
-
-
-create proc pA_editar_devolucion(
-@IdDevolución int not null,
-@FechaDevolución date not null,
-@Motivo varchar(20) not null
+create proc pA_editar_usuario(
+@idusuario int,
+@usuario varchar (20) NULL,
+@pass varchar (20) NULL,
+@acceso varchar (20) NULL,
+@estado varchar (10) NULL,
+@idempleado int NULL
 ) as 
 begin
 
-update Devolución set
-FechaDevolucion = isnull(@FechaDevolucion, FechaDevolucion),
-Motivo = isnull(@Motivo, Motivo)
-where IdDevolucion = @IdDevolucion
-
+update usuario set
+usuario = isnull(@usuario, usuario),
+pass = isnull(@pass, pass),
+acceso = isnull(@acceso, acceso),
+estado = isnull(@estado, estado),
+idempleado = isnull(@idempleado, idempleado)
+where idusuario = @idusuario
 end
 
-
-create proc pA_eliminar_devolucion(
-@IdDevolucion int
+create proc pA_eliminar_usuario(
+@idusuario int
 )
 as 
 begin
-delete from Devolución where IdDevolucion = @IdDevolucion
+delete from usuario where idusuario = @idusuario
 end
 
-select * from Devolución
+select * from usuario;
