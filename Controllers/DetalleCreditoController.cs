@@ -58,7 +58,7 @@ namespace D_AlturaSystemAPI.Controllers
 
         [HttpGet]
         [Route("Obtener/{IdDetalleCrédito:int}")]
-        public IActionResult Obtener(int iddetallecompra)
+        public IActionResult Obtener(int idDetalleCredito)
         {
             List<DetalleCredito> listado = new List<DetalleCredito>();
             DetalleCredito DetalleCrédito = new DetalleCredito();
