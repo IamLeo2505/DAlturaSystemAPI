@@ -1,12 +1,172 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+using D_AlturaSystemAPI.Modelos;
+
+using System.Data;
+using System.Data.SqlClient;
 
 namespace D_AlturaSystemAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class DetalleCreditoController : Controller
     {
-        public IActionResult Index()
+        private readonly string ConnectSQL, ConnectSQLTwo, ConnectSQLThree;
+        public DetalleCreditoController(IConfiguration configuration)
         {
-            return View();
+            ConnectSQL = configuration.GetConnectionString("ConnectSQL");
+            ConnectSQLTwo = configuration.GetConnectionString("ConnectSQLTwo");
+            ConnectSQLThree = configuration.GetConnectionString("ConnectSQLThree");
+        }
+
+        [HttpGet]
+        [Route("Listado")]
+        public IActionResult Lista()
+        {
+            List<DetalleCredito> listado = new List<DetalleCredito>();
+
+            try
+            {
+                using (var connection = new SqlConnection(ConnectSQL))
+                {
+                    connection.Open();
+                    var cmd = new SqlCommand("pA_lista_detallecredito", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (var rd = cmd.ExecuteReader())
+                    {
+                        while (rd.Read())
+                        {
+                            listado.Add(new DetalleCredito()
+                            {
+                                idDetalleCredito = Convert.ToInt32(rd["IdDetalleCrédito"]),
+                                FechaPago = Convert.ToDateTime(rd["FechaPago"]),
+                                MontoAbono = Convert.ToDouble(rd["MontoAbono"]),
+                            });
+                        }
+                    }
+                }
+
+                return StatusCode(StatusCodes.Status200OK, new { message = "ok", response = listado });
+            }
+            catch (Exception error)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message, response = listado });
+            }
+        }
+
+        [HttpGet]
+        [Route("Obtener/{IdDetalleCrédito:int}")]
+        public IActionResult Obtener(int idDetalleCrédito)
+        {
+            List<DetalleCredito> listado = new List<DetalleCredito>();
+            DetalleCredito DetalleCrédito = new DetalleCredito();
+
+            try
+            {
+                using (var connection = new SqlConnection(ConnectSQL))
+                {
+                    connection.Open();
+                    var cmd = new SqlCommand("pA_lista_detallecredito", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (var rd = cmd.ExecuteReader())
+                    {
+                        while (rd.Read())
+                        {
+                            listado.Add(new DetalleCredito()
+                            {
+                                idDetalleCredito = Convert.ToInt32(rd["IdDetalleCrédito"]),
+                                FechaPago = Convert.ToDateTime(rd["FechaPago"]),
+                                MontoAbono = Convert.ToDouble(rd["MontoAbono"]),
+                            });
+                        }
+                    }
+                }
+
+                DetalleCrédito = listado.Where(item => item.idDetalleCredito == idDetalleCrédito).FirstOrDefault();
+                return StatusCode(StatusCodes.Status200OK, new { message = "ok", response = DetalleCrédito });
+            }
+            catch (Exception error)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message, response = DetalleCrédito });
+            }
+        }
+
+        [HttpPost]
+        [Route("Guardar")]
+        public IActionResult Guardar([FromBody] DetalleCredito objeto)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(ConnectSQL))
+                {
+                    connection.Open();
+                    var cmd = new SqlCommand("pA_guardar_detallecredito", connection);
+                    cmd.Parameters.AddWithValue("FechaPago", objeto.FechaPago);
+                    cmd.Parameters.AddWithValue("MontoAbono", objeto.MontoAbono);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                return StatusCode(StatusCodes.Status200OK, new { message = "ok" });
+            }
+            catch (Exception error)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message });
+            }
+        }
+
+        [HttpPut]
+        [Route("Editar")]
+        public IActionResult EditarDatos([FromBody] DetalleCredito objeto)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(ConnectSQL))
+                {
+                    connection.Open();
+                    var cmd = new SqlCommand("pA_editar_detallecredito", connection);
+                    cmd.Parameters.AddWithValue("IdDetalleCrédito", objeto.idDetalleCredito == 0 ? DBNull.Value : objeto.idDetalleCredito);
+                    cmd.Parameters.AddWithValue("FechaPago", objeto.FechaPago == DateTime.MinValue ? DBNull.Value : objeto.FechaPago);
+                    cmd.Parameters.AddWithValue("MontoAbono", objeto.MontoAbono == 0 ? DBNull.Value : objeto.MontoAbono);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                return StatusCode(StatusCodes.Status200OK, new { message = "Editado" });
+            }
+            catch (Exception error)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message });
+            }
+        }
+
+        [HttpDelete]
+        [Route("Eliminar/{IdDetalleCrédito:int}")]
+        public IActionResult EliminarDatos(int idDetalleCredito)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(ConnectSQL))
+                {
+                    connection.Open();
+                    var cmd = new SqlCommand("pA_eliminar_detallecredito", connection);
+                    cmd.Parameters.AddWithValue("IdDetalleCrédito", idDetalleCredito);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                return StatusCode(StatusCodes.Status200OK, new { message = "Eliminado" });
+            }
+            catch (Exception error)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message });
+            }
         }
     }
 }
