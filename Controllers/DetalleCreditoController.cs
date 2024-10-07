@@ -58,7 +58,7 @@ namespace D_AlturaSystemAPI.Controllers
 
         [HttpGet]
         [Route("Obtener/{IdDetalleCrédito:int}")]
-        public IActionResult Obtener(int idDetalleCredito)
+        public IActionResult Obtener(int idDetalleCrédito)
         {
             List<DetalleCredito> listado = new List<DetalleCredito>();
             DetalleCredito DetalleCrédito = new DetalleCredito();
@@ -85,12 +85,12 @@ namespace D_AlturaSystemAPI.Controllers
                     }
                 }
 
-                DetalleCrédito = listado.Where(item => item.idDetalleCredito == idDetalleCredito).FirstOrDefault();
+                DetalleCrédito = listado.Where(item => item.idDetalleCredito == idDetalleCrédito).FirstOrDefault();
                 return StatusCode(StatusCodes.Status200OK, new { message = "ok", response = DetalleCrédito });
             }
             catch (Exception error)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message, response = detalleCompra });
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = error.Message, response = DetalleCrédito });
             }
         }
 
