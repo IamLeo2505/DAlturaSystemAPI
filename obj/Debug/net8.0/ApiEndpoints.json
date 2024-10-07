@@ -222,6 +222,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.DevolucionesController",
+    "Method": "EditarDatos",
+    "RelativePath": "api/Devoluciones/EditarDatos",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Devoluciones",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.DevolucionesController",
+    "Method": "EliminarDatos",
+    "RelativePath": "api/Devoluciones/EliminarDatos/{IdDevoluci\u00F3n}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdDevoluci\u00F3n",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.DevolucionesController",
+    "Method": "Guardar",
+    "RelativePath": "api/Devoluciones/Guardar Cambios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Devoluciones",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.DevolucionesController",
+    "Method": "Listado",
+    "RelativePath": "api/Devoluciones/Lista de Devoluciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.DevolucionesController",
+    "Method": "Obtener",
+    "RelativePath": "api/Devoluciones/Obtener/{IdDevoluci\u00F3n}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdDevoluci\u00F3n",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "D_AlturaSystemAPI.Controllers.EmpleadoController",
     "Method": "EditarDatos",
     "RelativePath": "api/Empleado/EditarDatos",
@@ -511,6 +585,80 @@
     "Parameters": [
       {
         "Name": "idproveedor",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.VentaController",
+    "Method": "EditarDatos",
+    "RelativePath": "api/Venta/Editar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Venta",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.VentaController",
+    "Method": "EliminarDatos",
+    "RelativePath": "api/Venta/Eliminar/{idventa}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idventa",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.VentaController",
+    "Method": "Guardar",
+    "RelativePath": "api/Venta/Guardar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objeto",
+        "Type": "D_AlturaSystemAPI.Modelos.Venta",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.VentaController",
+    "Method": "Lista",
+    "RelativePath": "api/Venta/Listado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "D_AlturaSystemAPI.Controllers.VentaController",
+    "Method": "Obtener",
+    "RelativePath": "api/Venta/Obtener/{idventa}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idventa",
         "Type": "System.Int32",
         "IsRequired": true
       }

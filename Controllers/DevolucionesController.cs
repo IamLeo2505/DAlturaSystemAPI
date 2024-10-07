@@ -28,7 +28,7 @@ namespace D_AlturaSystemAPI.Controllers
         [Route("Lista de Devoluciones")]
         public IActionResult Listado()
         {
-            List<devolución> listado = new List<devolución>();
+            List<Devoluciones> listado = new List<Devoluciones>();
 
             try
             {
@@ -43,10 +43,10 @@ namespace D_AlturaSystemAPI.Controllers
                     {
                         while (rd.Read())
                         {
-                            listado.Add(new devolución()
+                            listado.Add(new Devoluciones()
                             {
                                 IdDevolución = Convert.ToInt32(rd["IdDevolución"]),
-                                FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"])
+                                FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"]),
                                 Motivo = rd["Motivo"].ToString()                              
                             });
                         }
@@ -66,9 +66,9 @@ namespace D_AlturaSystemAPI.Controllers
         [Route("Obtener/{IdDevolución:int}")]
 
         public IActionResult Obtener(int IdDevolución)
-        {          
-            List<devolución> listado = new List<devolución>();
-            devolución Devolución = new devolución();
+        {
+            List<Devoluciones> listado = new List<Devoluciones>();
+            Devoluciones Devolución = new Devoluciones();
 
             try
             {
@@ -83,10 +83,10 @@ namespace D_AlturaSystemAPI.Controllers
                     {
                         while (rd.Read())
                         {
-                            listado.Add(new devolución()
+                            listado.Add(new Devoluciones()
                             {
                                 IdDevolución = Convert.ToInt32(rd["IdDevolución"]),
-                                FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"])
+                                FechaDevolución = Convert.ToDateTime(rd["FechaDevolución"]),
                                 Motivo = rd["Motivo"].ToString()
                             });
                         }
@@ -106,7 +106,7 @@ namespace D_AlturaSystemAPI.Controllers
         [HttpPost]
         [Route("Guardar Cambios")]
 
-        public IActionResult Guardar([FromBody] devolución objeto)
+        public IActionResult Guardar([FromBody] Devoluciones objeto)
         {
 
             try
@@ -137,7 +137,7 @@ namespace D_AlturaSystemAPI.Controllers
         [HttpPut]
         [Route("EditarDatos")]
 
-        public IActionResult EditarDatos([FromBody] devolución objeto)
+        public IActionResult EditarDatos([FromBody]  Devoluciones objeto)
         {
 
             try
@@ -148,7 +148,7 @@ namespace D_AlturaSystemAPI.Controllers
                     connection.Open();
                     var cmd = new SqlCommand("pA_editar_devolucion", connection);                  
                     cmd.Parameters.AddWithValue("IdDevolución", objeto.IdDevolución == 0 ? DBNull.Value : objeto.IdDevolución);
-                    cmd.Parameters.AddWithValue("FechaDevolución", objeto.FechaDevolución is null ? DBNull.Value : objeto.FechaDevolución);
+                    cmd.Parameters.AddWithValue("FechaDevolución", objeto.FechaDevolución.HasValue ? (object)objeto.FechaDevolución.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("Motivo", objeto.Motivo is null ? DBNull.Value : objeto.Motivo);
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -195,3 +195,6 @@ namespace D_AlturaSystemAPI.Controllers
         }
     }
 }
+
+
+

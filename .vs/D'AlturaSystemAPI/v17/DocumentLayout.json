@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|c:\\users\\usuario\\source\\repos\\d\u0027alturasystemapi\\controllers\\devolucionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|solutionrelative:controllers\\devolucionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|c:\\users\\usuario\\source\\repos\\d\u0027alturasystemapi\\modelos\\devoluciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|solutionrelative:modelos\\devoluciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|c:\\users\\usuario\\source\\repos\\d\u0027alturasystemapi\\controllers\\proveedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D36F27-7353-407F-AF20-791501586037}|D_AlturaSystemAPI.csproj|solutionrelative:controllers\\proveedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Devoluciones.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Modelos\\Devoluciones.cs",
+              "RelativeDocumentMoniker": "Modelos\\Devoluciones.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Modelos\\Devoluciones.cs*",
+              "RelativeToolTip": "Modelos\\Devoluciones.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T02:49:45.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProveedorController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Controllers\\ProveedorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProveedorController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Controllers\\ProveedorController.cs",
+              "RelativeToolTip": "Controllers\\ProveedorController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T02:47:48.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DevolucionesController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Controllers\\DevolucionesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DevolucionesController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\D\u0027AlturaSystemAPI\\Controllers\\DevolucionesController.cs*",
+              "RelativeToolTip": "Controllers\\DevolucionesController.cs*",
+              "ViewState": "AgIAALYAAAAAAAAAAAAswJMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T02:43:32.884Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
