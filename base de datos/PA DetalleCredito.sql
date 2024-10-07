@@ -4,7 +4,7 @@ BEGIN
     SELECT 
         IdDetalleCrédito,
         FechaPago,
-        MontoAbono,
+        MontoAbono
     FROM DetalleCrédito
 END
 
@@ -13,7 +13,7 @@ GO
 
 CREATE PROCEDURE pA_guardar_detallecredito(
     @FechaPago Date,
-    @MontoAbono DECIMAL(10,0),
+    @MontoAbono DECIMAL(10,0)
 ) AS 
 BEGIN
     INSERT INTO DetalleCrédito(FechaPago, MontoAbono)
@@ -21,14 +21,14 @@ BEGIN
 END
 
 CREATE PROCEDURE pA_editar_detallecredito(
-  @IdDetalleCrédito INT not null,
-  @FechaPago Date not null,
-  @MontoAbono DECIMAL(10,0) not null
+  @IdDetalleCrédito INT null,
+  @FechaPago Date null,
+  @MontoAbono DECIMAL(10,0) null
 ) AS 
 BEGIN
   UPDATE DetalleCrédito SET
     FechaPago = @FechaPago,
-	MontoAbono = @MontoAbono,
+	MontoAbono = @MontoAbono
   WHERE IdDetalleCrédito = @IdDetalleCrédito
 END
 

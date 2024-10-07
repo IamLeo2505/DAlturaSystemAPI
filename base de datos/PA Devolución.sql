@@ -20,9 +20,9 @@ end
 
 
 create proc pA_editar_devolucion(
-@IdDevolución int not null,
-@FechaDevolución date not null,
-@Motivo varchar(20) not null
+@IdDevolución int null,
+@FechaDevolución date null,
+@Motivo varchar(20) null
 ) as 
 begin
 

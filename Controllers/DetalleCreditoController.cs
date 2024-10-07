@@ -40,7 +40,7 @@ namespace D_AlturaSystemAPI.Controllers
                         {
                             listado.Add(new DetalleCredito()
                             {
-                                idDetalleCredito = Convert.ToInt32(rd["IdDetalleCrédito"]),
+                                idDetalleCrédito = Convert.ToInt32(rd["IdDetalleCrédito"]),
                                 FechaPago = Convert.ToDateTime(rd["FechaPago"]),
                                 MontoAbono = Convert.ToDouble(rd["MontoAbono"]),
                             });
@@ -77,7 +77,7 @@ namespace D_AlturaSystemAPI.Controllers
                         {
                             listado.Add(new DetalleCredito()
                             {
-                                idDetalleCredito = Convert.ToInt32(rd["IdDetalleCrédito"]),
+                                idDetalleCrédito = Convert.ToInt32(rd["IdDetalleCrédito"]),
                                 FechaPago = Convert.ToDateTime(rd["FechaPago"]),
                                 MontoAbono = Convert.ToDouble(rd["MontoAbono"]),
                             });
@@ -85,7 +85,7 @@ namespace D_AlturaSystemAPI.Controllers
                     }
                 }
 
-                DetalleCrédito = listado.Where(item => item.idDetalleCredito == idDetalleCrédito).FirstOrDefault();
+                DetalleCrédito = listado.Where(item => item.idDetalleCrédito == idDetalleCrédito).FirstOrDefault();
                 return StatusCode(StatusCodes.Status200OK, new { message = "ok", response = DetalleCrédito });
             }
             catch (Exception error)
@@ -129,9 +129,9 @@ namespace D_AlturaSystemAPI.Controllers
                 {
                     connection.Open();
                     var cmd = new SqlCommand("pA_editar_detallecredito", connection);
-                    cmd.Parameters.AddWithValue("IdDetalleCrédito", objeto.idDetalleCredito == 0 ? DBNull.Value : objeto.idDetalleCredito);
-                    cmd.Parameters.AddWithValue("FechaPago", objeto.FechaPago == DateTime.MinValue ? DBNull.Value : objeto.FechaPago);
-                    cmd.Parameters.AddWithValue("MontoAbono", objeto.MontoAbono == 0 ? DBNull.Value : objeto.MontoAbono);
+                    cmd.Parameters.AddWithValue("IdDetalleCrédito", objeto.idDetalleCrédito);
+                    cmd.Parameters.AddWithValue("FechaPago", objeto.FechaPago == DateTime.MinValue ? DateTime.Now : objeto.FechaPago);
+                    cmd.Parameters.AddWithValue("MontoAbono", objeto.MontoAbono);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.ExecuteNonQuery();

@@ -12,6 +12,7 @@
         public decimal precio_venta { get; set; }
         public int stock { get; set; }
         public string estado { get; set; }
+        public int idcategoria { get; set; }
     }
 }
 
