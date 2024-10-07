@@ -42,7 +42,7 @@ namespace D_AlturaSystemAPI.Controllers
                             {
                                 idDetalleCredito = Convert.ToInt32(rd["IdDetalleCrédito"]),
                                 FechaPago = Convert.ToDateTime(rd["FechaPago"]),
-                                MontoAbono = Convert.ToDecimal(rd["MontoAbono"]),
+                                MontoAbono = Convert.ToDouble(rd["MontoAbono"]),
                             });
                         }
                     }
@@ -79,7 +79,7 @@ namespace D_AlturaSystemAPI.Controllers
                             {
                                 idDetalleCredito = Convert.ToInt32(rd["IdDetalleCrédito"]),
                                 FechaPago = Convert.ToDateTime(rd["FechaPago"]),
-                                MontoAbono = Convert.ToDecimal(rd["MontoAbono"]),
+                                MontoAbono = Convert.ToDouble(rd["MontoAbono"]),
                             });
                         }
                     }
