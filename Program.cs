@@ -9,9 +9,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Sirve archivos estáticos desde wwwroot
-app.UseDefaultFiles();
-app.UseStaticFiles();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
