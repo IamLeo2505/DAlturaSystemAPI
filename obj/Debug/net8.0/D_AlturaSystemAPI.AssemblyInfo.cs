@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("D_AlturaSystemAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3827e54da649c8a32228ceb59e11a62d189bf63a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cae889b183ef10bb9b6f0697adadef0fba1e9abb")]
 [assembly: System.Reflection.AssemblyProductAttribute("D_AlturaSystemAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("D_AlturaSystemAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
